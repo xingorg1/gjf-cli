@@ -18,7 +18,7 @@ module.exports = class Creator extends EventEmitter {
     const { run, name, context } = this
     // preset = cloneDeep(preset)
 
-    // generate package.json with plugin dependencies
+    // 根据插件依赖生成package.json
     const pkg = {
       name,
       version: '0.1.0',
