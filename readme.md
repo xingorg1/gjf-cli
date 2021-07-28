@@ -1,4 +1,4 @@
-# gjf-cli
+# Gjf Cli
 
 > 根据[vue-cli](https://github.com/vuejs/vue-cli)的思路和源码搭建的一套简易脚手架，只实现模板迁移和版本管理。
 
