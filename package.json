@@ -1,13 +1,13 @@
 {
-  "name": "axe-cli",
+  "name": "gjf-cli",
   "version": "1.0.0",
   "description": "Command line interface for development",
   "bin": {
-    "axe-cli": "./bin/axe"
+    "gjf-cli": "./bin/gjf"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/DFE-evernote/axe-cli.git"
+    "url": "git+https://github.com/xingorg1/gjf-cli.git"
   },
   "scripts": {
     "lint": "eslint src"

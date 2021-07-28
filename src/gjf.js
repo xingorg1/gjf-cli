@@ -7,7 +7,7 @@ const minimist = require('minimist')
 const semver = require('semver')
 const chalk = require('chalk')
 // 校验node版本
-checkNodeVersion(requiredVersion, 'axe-cli')
+checkNodeVersion(requiredVersion, 'gjf-cli')
 
 function checkNodeVersion(wanted, id) {
   if (!semver.satisfies(process.version, wanted, { includePrerelease: true })) {
@@ -22,13 +22,13 @@ function checkNodeVersion(wanted, id) {
 // 交互式命令
 
 program
-  .version(`axe-cli ${require('../package.json').version}`)
+  .version(`gjf-cli ${require('../package.json').version}`)
   .usage('<command> [options]')
 
 // create命令
 program
   .command('create <app-name>')
-  .description('create a new project powered by axe-cli')
+  .description('create a new project powered by gjf-cli')
   .option('-c, --clone', 'Use git clone when fetching remote preset')
   .option('-f, --force', 'Overwrite target directory if it exists')
   .option('-g, --git [message]', 'Force git initialization with initial commit message')
@@ -55,7 +55,7 @@ program.on('command:*', ([cmd]) => {
 // 丰富help命令的提示信息
 program.on('--help', () => {
   console.log()
-  console.log(`  Run ${chalk.cyan(`axe-cli <command> --help`)} for detailed usage of given command.`)
+  console.log(`  Run ${chalk.cyan(`gjf-cli <command> --help`)} for detailed usage of given command.`)
   console.log()
 })
 
