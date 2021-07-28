@@ -13,8 +13,6 @@ module.exports = class Creator extends EventEmitter {
     this.run = this.run.bind(this)
   }
   async create(cliOptions = {}, preset = null) {
-    console.log('CREATE FUNCTION')
-    console.log(cliOptions)
     const { run, name, context } = this
     // preset = cloneDeep(preset)
 
