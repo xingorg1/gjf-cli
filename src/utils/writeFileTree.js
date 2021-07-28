@@ -19,15 +19,15 @@ function deleteRemovedFiles (directory, newFiles, previousFiles) {
  * @param {Record<string,string|Buffer>} [previousFiles]
  * @param {Set<string>} [include]
  */
-module.exports = async function writeFileTree (dir, files, previousFiles, include) {
+module.exports = async function writeFileTree (dir, files, previousFiles = false, include) {
   if (previousFiles) {
     await deleteRemovedFiles(dir, files, previousFiles)
   }
   // 将内存中待写入的「文件名/文件内容」的键值对进行遍历，并依次写入到磁盘
   Object.keys(files).forEach((name) => {
-    if (include && !include.has(name)) return
+    if (include && !include.has(name)) return // FIXME: include not has name ? 
     const filePath = path.join(dir, name)
-    fs.ensureDirSync(path.dirname(filePath))
+    fs.ensureDirSync(path.dirname(filePath)) // 要用“fs-extra”这个包的“ensureDirSync”方法才行
     fs.writeFileSync(filePath, files[name])
   })
 }
